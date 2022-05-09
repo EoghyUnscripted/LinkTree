@@ -14,7 +14,7 @@ This app requires a separate `local_settings.py` file which holds the secret key
 
 #### local_settings.py File Sample
 
-'''
+``` Python
 SECRET_KEY = '8Db[e(c64){}=l*4%3wzsxcl_$$l9e0b!gtf!%g9$7)fmh5y=w7&8'
 DEBUG = True/False
 ALLOWED_HOSTS = ['site1.local', 'site2.local', 'localhost', '10.0.0.188']
@@ -29,4 +29,4 @@ DATABASES = {
         'PORT':'5432',
     }
 }
-'''
+```
