@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class='container mt-5'>
+    <div class='text-center' id='heading'>
+        <img class='w-50 rounded-circle shadow-lg mb-3 mx-auto d-block' src='{{ profile.User_Image.url }}'> <br/>
+        <strong>{{ profile.User_Full_Name }}</strong> <br/>
+        {{ profile.User_Title }}
+    </div>
+    <div class='text-center mt-3' id='summary'>
+        <div class='col-10 mx-auto d-block'><em>{{ profile.User_Summary }}</em></div>
+    </div>
+    <div class='mt-4 text-center' id='links'>
+        {% for d in profile.User_Links.all %}
+        <a class='btn btn-labeled col-12 col-md-10 col-lg-8' target='_blank' href='{{ d.Link_HTTP }}' role='button'>
+            <span class='btn-label'>{{ d.Link_Icon|safe }}</span>
+            <span class='btn-link'>{{ d.Link_Name }}</span>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

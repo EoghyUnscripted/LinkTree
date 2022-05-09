@@ -1,0 +1,43 @@
+body {
+    background-color: #666;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+img {
+    max-width: 100px;
+}
+
+.btn-label {
+    color: white;
+    float: left;
+	display: inline-block;
+	border-radius: 3px 0 0 3px;
+    font-size: 1.7rem;
+}
+
+.btn-link {
+    display: inline-block;
+    color: white;
+    margin-top: 0px;
+    font-size: x-large;
+    margin-right: 20px;
+    align-self: center;
+    text-decoration: none !important;
+}
+
+.btn-link:hover {
+    color: white;
+}
+
+.btn {
+	margin-bottom: 10px;
+    background-color: #50394C;
+    border-radius: 15px;
+
+}
+
+.btn:hover {
+    background: rgba(61, 42, 50, 1);
+    transform: scale(1.02);
+}
