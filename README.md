@@ -15,10 +15,11 @@ This app requires a separate `local_settings.py` file which holds the secret key
 #### local_settings.py File Sample
 
 ``` Python
-SECRET_KEY = '8Db[e(c64){}=l*4%3wzsxcl_$$l9e0b!gtf!%g9$7)fmh5y=w7&8'
-DEBUG = True/False
-ALLOWED_HOSTS = ['site1.local', 'site2.local', 'localhost', '10.0.0.188']
+SECRET_KEY = '8Db[e(c64){}=l*4%3wzsxcl_$$l9e0b!gtf!%g9$7)fmh5y=w7&8'    # Never share your secret key
+DEBUG = True/False  # Debug should be set False when hosting live, True when developing/testing
+ALLOWED_HOSTS = ['site1.local', 'site2.local', 'localhost', '10.0.0.188']   # Include your main URL when hosting live
 
+# This is a sample when using PostGreSql
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -29,4 +30,15 @@ DATABASES = {
         'PORT':'5432',
     }
 }
+```
+
+In the `settings.py` file, I have scripted code that will import this data from the `local_settings.py` file so that it can remain separate and hidden from malicious actors. See below.
+
+``` Python
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
 ```
